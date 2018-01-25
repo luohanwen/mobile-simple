@@ -1,0 +1,24 @@
+{
+  "name": "mobile-flexible",
+  "description": "a project for mobile flexible",
+  "main": "",
+  "authors": [
+    "haven <13580405385@139.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "flexible",
+    "mobile"
+  ],
+  "homepage": "index.html",
+  "ignore": [
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "swiper": "^3.4.2",
+    "lib-flexible": "*"
+  }
+}

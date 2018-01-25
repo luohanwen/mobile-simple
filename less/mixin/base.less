@@ -1,0 +1,11 @@
+/**
+     * 一些基础常用的函数
+ */
+//超过n行省略号
+.line-clamp(@num) {
+    word-break: break-all;
+    display: -webkit-box;
+    -webkit-line-clamp: @num;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}

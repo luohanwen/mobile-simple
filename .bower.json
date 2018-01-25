@@ -1,0 +1,34 @@
+{
+  "name": "mobile-flexible",
+  "description": "a project for mobile flexible",
+  "main": "",
+  "authors": [
+    "haven <13580405385@139.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "flexible",
+    "mobile"
+  ],
+  "homepage": "index.html",
+  "ignore": [
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "swiper": "^3.4.2",
+    "lib-flexible": "*"
+  },
+  "_release": "5a618ed047",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "5a618ed047a9173d502c9442ae48466b54676b19"
+  },
+  "_source": "https://github.com/luohanwen/mobile-flexible.git",
+  "_target": "*",
+  "_originalSource": "mobile-flexible",
+  "_direct": true
+}

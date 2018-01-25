@@ -1,0 +1,95 @@
+@import (reference) 'mixin';
+/**
+     * 一些基本的共用样式
+ */
+//超出省略号
+.ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+//控制段落显示几行，超出部分省略号
+.line-clamp-2{
+    .line-clamp(2);
+}
+//清楚浮动
+.clearfix {
+    e("*+height: 1%;");
+    &:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+}
+//定位居中
+.posi-center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+//浮动
+.fl-l {
+    float: left;
+}
+
+.fl-r {
+    float: right;
+}
+
+// position
+.pos-r {
+    position: relative;
+}
+
+// display
+.d-n {
+    display: none;
+}
+
+.d-b {
+    display: block;
+}
+
+.d-ib {
+    display: inline-block;
+}
+
+// visibility
+vi-h {
+    visibility: hidden;
+}
+
+// font-weight
+.fw-b {
+    font-weight: bold;
+}
+
+// text-align
+.ta-l {
+    text-align: left;
+}
+
+.ta-c {
+    text-align: center;
+}
+
+.ta-r {
+    text-align: right;
+}
+
+// vertical-align
+.v-align-t {
+    vertical-align: top;
+}
+
+.v-align-m {
+    vertical-align: middle;
+}
+
+.v-align-b {
+    vertical-align: bottom;
+}

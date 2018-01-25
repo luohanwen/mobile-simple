@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="applicable-device" content="mobile">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="address=no">
+    <title>mobile-simple</title>
+    <!-- 百度统计代码 -->
+    <script type="text/javascript">
+    // 初始化移动自适应
+    (function(d, g) {
+        var t = d.document;
+        var c = t.documentElement;
+        var m = t.querySelector('meta[name="viewport"]');
+        var p = t.querySelector('meta[name="flexible"]');
+        var b = 0;
+        var r = 0;
+        var n;
+        var e = g.flexible || (g.flexible = {});
+        if (m) {
+            console.warn("将根据已有的meta标签来设置缩放比例");
+            var f = m.getAttribute("content").match(/initial\-scale=([\d\.]+)/);
+            if (f) {
+                r = parseFloat(f[1]);
+                b = parseInt(1 / r)
+            }
+        } else {
+            if (p) {
+                var l = p.getAttribute("content");
+                if (l) {
+                    var q = l.match(/initial\-dpr=([\d\.]+)/);
+                    var i = l.match(/maximum\-dpr=([\d\.]+)/);
+                    if (q) {
+                        b = parseFloat(q[1]);
+                        r = parseFloat((1 / b).toFixed(2))
+                    }
+                    if (i) {
+                        b = parseFloat(i[1]);
+                        r = parseFloat((1 / b).toFixed(2))
+                    }
+                }
+            }
+        }
+        if (!b && !r) { var j = d.navigator.appVersion.match(/android/gi); var k = d.navigator.appVersion.match(/iphone/gi); var o = d.devicePixelRatio; if (k) { if (o >= 3 && (!b || b >= 3)) { b = 3 } else { if (o >= 2 && (!b || b >= 2)) { b = 2 } else { b = 1 } } } else { b = 1 } r = 1 / b } c.setAttribute("data-dpr", b);
+        if (!m) {
+            m = t.createElement("meta");
+            m.setAttribute("name", "viewport");
+            m.setAttribute("content", "initial-scale=" + r + ", maximum-scale=" + r + ", minimum-scale=" + r + ", user-scalable=no");
+            if (c.firstElementChild) { c.firstElementChild.appendChild(m) } else {
+                var h = t.createElement("div");
+                h.appendChild(m);
+                t.write(h.innerHTML)
+            }
+        }
+
+        function a() {
+            var u = c.getBoundingClientRect().width;
+            if (u / b > 540) { u = 540 * b }
+            var v = u / 10;
+            c.style.fontSize = v + "px";
+            e.rem = d.rem = v;
+            s()
+        }
+        d.addEventListener("resize", function() {
+            clearTimeout(n);
+            n = setTimeout(a, 300)
+        }, false);
+        d.addEventListener("pageshow", function(u) {
+            if (u.persisted) {
+                clearTimeout(n);
+                n = setTimeout(a, 300)
+            }
+        }, false);
+        if (t.readyState === "complete") {
+            t.body.style.fontSize = 12 * b + "px";
+            s()
+        } else {
+            t.addEventListener("DOMContentLoaded", function(u) {
+                t.body.style.fontSize = 12 * b + "px";
+                s()
+            }, false)
+        }
+        a();
+        e.dpr = d.dpr = b;
+        e.refreshRem = a;
+        e.rem2px = function(v) { var u = parseFloat(v) * this.rem; if (typeof v === "string" && v.match(/rem$/)) { u += "px" } return u };
+        e.px2rem = function(v) { var u = parseFloat(v) / this.rem; if (typeof v === "string" && v.match(/px$/)) { u += "rem" } return u };
+
+        function s() {
+            if (!t.body) { return }
+            var v = t.createElement("div"),
+                u;
+            v.style.cssText = "position: fixed;left: -1rem;top: 0;width: 1rem;height: 1px";
+            t.body.appendChild(v);
+            u = v.getBoundingClientRect().width;
+            if (u != d.rem) {
+                var x = Math.round(d.rem / u * d.rem);
+                c.style.fontSize = x + "px";
+                d.rem = x
+            }
+            t.body.removeChild(v)
+        }
+    })(window, window.lib || (window.lib = {}));
+    </script>
+    <link rel="stylesheet" href="less/main.css?v=180124">
+</head>
+
+<body ontouchstart="">
+hello world
+</body>
+
+</html>
