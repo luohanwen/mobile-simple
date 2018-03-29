@@ -1,6 +1,7 @@
 /**
      * 一些基础常用的函数
  */
+
 //超过n行省略号
 .line-clamp(@num) {
     word-break: break-all;
@@ -8,4 +9,12 @@
     -webkit-line-clamp: @num;
     -webkit-box-orient: vertical;
     overflow: hidden;
+}
+
+//常用div背景图
+.div-img(@width, @height, @url) {
+    width: @width;
+    height: @height;
+    background: url(@url);
+    background-size: 100% 100%;
 }
